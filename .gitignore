@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+data/
+
+# Detailed generated simulation data stays in the private development home.
+/results/**
+!/results/**/
+!/results/**/report.md
+!/results/**/*.png
+!/results/**/*.svg
+
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+.venv/
+.cache/
+.DS_Store

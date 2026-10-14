@@ -1,0 +1,37 @@
+{
+  "experiment_config": "extended.json",
+  "days": 360,
+  "additional_seeds": 20,
+  "workers": 4,
+  "long_days": 1080,
+  "long_additional_seeds": 4,
+  "long_scenarios": ["reference", "arrivals", "combined"],
+  "policies": {
+    "v2": {"adaptive":false,"cooperative_prices":false,"delegation":false,"circulation":false},
+    "v3": {"adaptive":true,"cooperative_prices":true,"delegation":true,"circulation":true},
+    "adaptive_only": {"adaptive":true,"cooperative_prices":false,"delegation":false,"circulation":false},
+    "prices_only": {"adaptive":false,"cooperative_prices":true,"delegation":false,"circulation":false},
+    "delegation_only": {"adaptive":false,"cooperative_prices":false,"delegation":true,"circulation":false},
+    "circulation_only": {"adaptive":false,"cooperative_prices":false,"delegation":false,"circulation":true}
+  },
+  "main_policies": ["v2", "v3"],
+  "workforce_review_days": 7,
+  "expansion_cost_per_job_cents": 20000,
+  "expansion_materials_per_job": 4,
+  "local_material_reserve": 24,
+  "delegation_daily_fee_cents": 100,
+  "cooperative_markup": 1.02,
+  "municipal_profit_tax_basis_points": 2500,
+  "wealth_tax_threshold_cents": 50000,
+  "wealth_tax_weekly_basis_points": 200,
+  "criteria": {
+    "first_wage_max_days": 3,
+    "housing_wait_max_days": 14,
+    "newcomer_essential_cover_minimum": 1.0,
+    "newcomer_initial_cover_minimum": 1.05,
+    "newcomer_food_access_minimum": 0.99,
+    "newcomer_reserve_minimum_days": 3,
+    "existing_businesses_operating_minimum": 6
+  },
+  "gameplay": {"required_initial_choices": 2, "required_daily_actions": 0, "optional_goals": ["garden", "bench"], "offline_penalties": false}
+}

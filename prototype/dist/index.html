@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City — Le quartier des Tilleuls</title>
+  <meta name="description" content="Un village à explorer. Choisis ta maison, ton activité et laisse le quotidien suivre son cours.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <script src="/scene.js" defer></script><script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="/" aria-label="City, accueil"><span class="brand-house" aria-hidden="true"></span>City</a>
+    <div class="neighborhood"><strong>Les Tilleuls</strong><span>Un quartier à faire vivre.</span></div>
+    <div class="day"><span aria-hidden="true">☀</span><span id="day-label">Jour 1</span></div>
+    <div id="wallet" class="wallet">Visite libre</div>
+  </header>
+  <main>
+    <section class="town" aria-label="Le quartier en perspective">
+      <div class="map-frame">
+        <canvas id="map" width="1440" height="880" tabindex="0" aria-label="Carte du quartier. Clique pour marcher. Glisse pour déplacer la vue. Molette ou boutons pour zoomer. Flèches ou ZQSD pour marcher."></canvas>
+        <div class="camera-tools" aria-label="Caméra">
+          <div class="zoom-row"><button id="zoom-out" aria-label="Dézoomer">−</button><output id="zoom-level" aria-live="polite">100 %</output><button id="zoom-in" aria-label="Zoomer">+</button></div>
+          <button id="overview" title="Voir tout le quartier">Vue entière</button><button id="follow" title="Centrer sur mon personnage">Me retrouver</button>
+        </div>
+        <div class="map-help" id="map-help">Glisse la vue · Molette pour zoomer</div>
+        <div class="guide-line"><span id="guide-icon" aria-hidden="true">⌂</span><span id="welcome">Choisis ton coin du quartier.</span></div>
+        <button id="interact" class="map-interact" hidden>Parler à Jeanne</button>
+        <aside class="notebook" aria-label="Ton guide">
+          <div class="notebook-heading"><span class="guide-avatar" aria-hidden="true">J</span><div><strong>Jeanne</strong><span>On y va ensemble.</span></div><span id="progress">Bienvenue</span></div>
+          <div id="panel"></div>
+        </aside>
+      </div>
+      <div class="town-toolbar">
+        <nav class="places" aria-label="Rejoindre un lieu"><button data-place="townhall">Mairie</button><button data-place="market">Épicerie</button><button data-place="bakery">Boulangerie</button><button data-place="farm">Jardins</button><button data-place="workshop">Atelier</button><button id="home-nav" data-place="home_place" hidden>Ma maison</button></nav>
+        <div class="time-controls"><button id="advance" disabled>Lendemain</button><button id="pause" aria-pressed="false">Pause</button></div>
+      </div>
+    </section>
+    <div class="below-map"><p id="routine-note">Deux choix. Puis le quotidien se fait tout seul.</p><span id="save-status">Ville locale</span></div>
+    <div class="touch-controls" aria-label="Déplacements"><button data-move="0,-1" aria-label="Marcher vers le haut">↑</button><button data-move="-1,0" aria-label="Marcher vers la gauche">←</button><button data-move="0,1" aria-label="Marcher vers le bas">↓</button><button data-move="1,0" aria-label="Marcher vers la droite">→</button></div>
+  </main>
+  <footer><span>City · Prototype local</span><button id="backup" hidden>Sauvegarde</button><span>Reviens à ton rythme.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
